@@ -1,0 +1,20 @@
+[
+  {
+    "document_key": "brk-10q-q3-2025",
+    "title": "Berkshire Hathaway Inc. — Form 10-Q, quarter ended September 30, 2025",
+    "source_url": "https://www.berkshirehathaway.com/qtrly/3rdqtr25.pdf",
+    "sha256": "b93670c8920674ce79e7e0d81121e20821adab0703e4dcc3fbc4f1c880ef9aa8",
+    "pages": 60,
+    "retrieved_at": "2026-10-30",
+    "notes": "Public SEC filing. Page numbers in labels are 1-based PDF page indices (the printed page number is one lower)."
+  },
+  {
+    "document_key": "brk-letter-2025",
+    "title": "Berkshire Hathaway Inc. — 2025 letter to shareholders",
+    "source_url": "https://www.berkshirehathaway.com/letters/2025ltr.pdf",
+    "sha256": "8a7daf30955673a0f39611857c7663ca84431a5af33ca900a6e715fa5a1584ad",
+    "pages": 20,
+    "retrieved_at": "2026-10-30",
+    "notes": "Public shareholder letter. Page numbers are 1-based PDF page indices."
+  }
+]

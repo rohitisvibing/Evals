@@ -1,0 +1,558 @@
+{
+ "batch_id": "be7f92c5-ac65-4fc8-9621-0e8839558a64",
+ "dataset_version": "golden.v1",
+ "created_at": "2026-10-29T18:49:09.868Z",
+ "is_mock": false,
+ "config": {
+  "layers": [
+   "retrieval"
+  ],
+  "strategies": [
+   "lexical"
+  ],
+  "k": 8,
+  "retrieval_ks": [
+   1,
+   3,
+   5,
+   8,
+   10
+  ],
+  "models": {
+   "jev": "jev-1.14.0",
+   "judge": "google/gemma-4-31b-it:free",
+   "embedding": "baai/bge-m3"
+  },
+  "versions": {
+   "decisionSchema": "decision.v1",
+   "rubric": "judge-rubric.v1",
+   "jevPrompt": "jev-questions.v1",
+   "chunker": "chunk.v1",
+   "dataset": "golden.v1"
+  },
+  "examples": 112,
+  "judge_calls": 0,
+  "max_judge_calls": 45,
+  "providers": [
+   "jev",
+   "judge"
+  ]
+ },
+ "label_snapshot": {
+  "q3-001": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-002": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-003": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-004": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-005": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-006": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-007": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-008": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-009": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-010": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-011": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-012": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-013": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-014": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-015": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-016": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-017": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-018": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-019": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-020": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-021": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-022": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-023": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-024": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-025": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-026": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-027": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-028": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-029": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-030": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-031": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-032": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-033": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-034": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-035": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-036": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-037": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-038": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-039": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-040": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-041": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-042": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-043": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-044": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-045": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-046": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-047": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-048": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-049": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-050": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-051": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-052": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-053": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-054": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-055": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-056": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-057": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-058": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-001": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-002": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-003": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-004": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-005": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-006": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-007": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-008": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-009": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-010": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-011": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-012": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-013": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-014": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-015": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-028": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-016": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-017": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-018": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-019": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-020": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-021": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-022": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-023": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-024": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-025": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-026": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-027": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-029": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-030": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-031": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-032": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-059": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-060": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-061": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-062": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-063": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-064": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-065": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-066": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-067": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "q3-068": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-033": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-034": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-035": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-036": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-037": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-038": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-039": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-040": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-041": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-042": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-043": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  },
+  "ltr-044": {
+   "label_version": 1,
+   "review_status": "pending_human_review"
+  }
+ },
+ "summary": {
+  "retrieval": [
+   {
+    "strategy": "lexical",
+    "n": 108,
+    "mrr": 0.6278806584362141,
+    "at_k": {
+     "1": {
+      "recall": 0.5370370370370371,
+      "recall_ci": {
+       "lo": 0.4444444444444444,
+       "hi": 0.6296296296296297
+      },
+      "full_recall": 0.5277777777777778,
+      "multi_page_full_recall": 0,
+      "ndcg": 0.5462962962962963
+     },
+     "3": {
+      "recall": 0.6898148148148148,
+      "recall_ci": {
+       "lo": 0.6018518518518519,
+       "hi": 0.7732638888888882
+      },
+      "full_recall": 0.6851851851851852,
+      "multi_page_full_recall": 0.3333333333333333,
+      "ndcg": 0.608841270809736
+     },
+     "5": {
+      "recall": 0.7175925925925926,
+      "recall_ci": {
+       "lo": 0.6296296296296297,
+       "hi": 0.8009259259259259
+      },
+      "full_recall": 0.7129629629629629,
+      "multi_page_full_recall": 0.3333333333333333,
+      "ndcg": 0.620804508533997
+     },
+     "8": {
+      "recall": 0.7546296296296297,
+      "recall_ci": {
+       "lo": 0.6712962962962963,
+       "hi": 0.8333333333333334
+      },
+      "full_recall": 0.75,
+      "multi_page_full_recall": 0.3333333333333333,
+      "ndcg": 0.6321128942249141
+     },
+     "10": {
+      "recall": 0.8101851851851852,
+      "recall_ci": {
+       "lo": 0.7361111111111112,
+       "hi": 0.8842592592592593
+      },
+      "full_recall": 0.8055555555555556,
+      "multi_page_full_recall": 0.3333333333333333,
+      "ndcg": 0.6475797840004499
+     }
+    }
+   }
+  ],
+  "decisions": null,
+  "jev_reliability": null,
+  "review_status_counts": {
+   "pending_human_review": 112
+  },
+  "rows": []
+ }
+}

@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
+/* Light only, by design. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --surface-0: #ffffff;   /* canvas */
+  --surface-1: #ffffff;   /* raised (bordered, not shadowed) */
+  --surface-2: #fafafa;   /* recessed: inputs wells, code, table heads */
+  --border: #eaeaea;
+  --border-strong: #d4d4d4;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --text-muted: #8f8f8f;
+  --accent: #0068d6;
+  --series-1: #0068d6;
+  --series-2: #d97706;
+  --series-3: #0a7c42;
+  --good: #0a7c42;
+  --good-bg: #ebf8ef;
+  --bad: #d93036;
+  --bad-bg: #fdecec;
+  --warn: #a35200;
+  --warn-bg: #fff6e5;
+  --neutral-bg: #f2f2f2;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-s0: var(--surface-0);
+  --color-s1: var(--surface-1);
+  --color-s2: var(--surface-2);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-ink: var(--text-primary);
+  --color-ink2: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-good: var(--good);
+  --color-good-bg: var(--good-bg);
+  --color-bad: var(--bad);
+  --color-bad-bg: var(--bad-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+  --color-neutral-bg: var(--neutral-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html { font-size: 14px; }
+body {
+  background: var(--surface-0);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; }
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 36px; padding: 0 14px; border-radius: 6px; font-weight: 500; font-size: 14px;
+  border: 1px solid var(--border); background: #fff; color: var(--text-primary);
+  transition: background-color 120ms, border-color 120ms;
+}
+.btn:hover:not(:disabled) { background: var(--surface-2); border-color: var(--border-strong); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: #000; color: #fff; border-color: #000; }
+.btn-primary:hover:not(:disabled) { background: #333; border-color: #333; }
+.btn-sm { height: 30px; padding: 0 10px; font-size: 13px; }
+
+.field {
+  width: 100%; border: 1px solid var(--border); border-radius: 6px; background: #fff;
+  padding: 8px 10px; font-size: 14px; transition: border-color 120ms, box-shadow 120ms;
+}
+.field:hover { border-color: var(--border-strong); }
+.field:focus { outline: none; border-color: #000; box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08); }
+
+/* Tables */
+table.data { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.data th { text-align: left; font-weight: 500; color: var(--text-secondary); background: var(--surface-2); border-bottom: 1px solid var(--border); padding: 8px 10px; white-space: nowrap; }
+table.data td { border-bottom: 1px solid var(--border); padding: 9px 10px; vertical-align: top; }
+table.data tr:last-child td { border-bottom: 0; }
+table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Metric definitions on hover/focus */
+.tip { position: relative; display: inline-flex; }
+.tip-term { cursor: help; text-decoration: underline dotted var(--border-strong); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.tip-term:hover { text-decoration-color: var(--text-secondary); }
+.tip-body {
+  position: absolute; z-index: 40; top: calc(100% + 8px); left: 50%; transform: translate(-50%, -2px);
+  width: max-content; max-width: 260px; padding: 8px 10px; border-radius: 6px;
+  background: #000; color: #fff; font-size: 12px; line-height: 1.45; font-weight: 400; text-align: left;
+  white-space: normal; text-transform: none; letter-spacing: 0;
+  opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 120ms, transform 120ms;
+}
+.tip[data-align="start"] .tip-body { left: 0; transform: translate(0, -2px); }
+.tip[data-align="end"] .tip-body { left: auto; right: 0; transform: translate(0, -2px); }
+.tip:hover .tip-body, .tip:focus-within .tip-body { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.tip[data-align="start"]:hover .tip-body, .tip[data-align="start"]:focus-within .tip-body,
+.tip[data-align="end"]:hover .tip-body, .tip[data-align="end"]:focus-within .tip-body { transform: translate(0, 0); }
+
+/* Tabs (underline) */
+.tab { position: relative; height: 44px; padding: 0 2px; color: var(--text-secondary); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
+.tab:hover { color: var(--text-primary); }
+.tab[aria-selected="true"] { color: var(--text-primary); }
+.tab[aria-selected="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: #000; }
+
+/* The one orchestrated moment: verdict reveal when a comparison arrives. */
+@keyframes verdict-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.verdict-in { animation: verdict-in 260ms ease-out both; }
+.verdict-in + .verdict-in { animation-delay: 90ms; }
+@media (prefers-reduced-motion: reduce) {
+  .verdict-in { animation: none; }
+  .tip-body, .btn, .field { transition: none; }
 }

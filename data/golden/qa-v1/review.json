@@ -1,0 +1,143 @@
+{
+ "policy": "Percent answers within 0.3 points of the exact value but mis-rounded are excluded as ambiguous; beyond 0.3 points they are incorrect. Every override records a note and reviewer.",
+ "overrides": {
+  "q3-038:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "reviewed",
+   "note": "Says Q3 grew faster; nine-month growth (6.8%) was faster than Q3 (3.6%).",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-041:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "reviewed",
+   "note": "Right direction but quotes the insurance-only equity line ($263,366M→$277,238M), not Insurance and Other ($271,588M→$283,241M).",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-044:rag_oracle": {
+   "truth_label": "incorrect",
+   "review_status": "reviewed",
+   "note": "States $700.4B; shareholders' equity was $698.2B.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "ltr-016:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "reviewed",
+   "note": "Says Apple + AmEx combined = $479M and totals $958M; combined dividends were $759M.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-013:rag_oracle": {
+   "truth_label": "correct",
+   "review_status": "reviewed",
+   "note": "'Increased by $1.6 billion' matches the 10-Q's stated after-tax increase.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-013:rag_hybrid": {
+   "truth_label": "correct",
+   "review_status": "reviewed",
+   "note": "'Increased by $1.6 billion' matches the 10-Q's stated after-tax increase.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-022:rag_hybrid": {
+   "truth_label": "correct",
+   "review_status": "reviewed",
+   "note": "'+2.7 percentage points' correctly answers how the ratio changed.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "ltr-032:rag_oracle": {
+   "truth_label": "correct",
+   "review_status": "reviewed",
+   "note": "'Only modestly above' is correct; decline detector misfired on 'not specified'.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-002:rag_oracle": {
+   "truth_label": "incorrect",
+   "review_status": "reviewed",
+   "note": "Says earnings increased (they fell 31%); self-contradictory.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-002:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "reviewed",
+   "note": "Says earnings rose; they fell.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-021:rag_hybrid": {
+   "truth_label": "correct",
+   "review_status": "reviewed",
+   "note": "+0.1 pt in Q3 and −1.8 pt for nine months are both correct.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-057:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "reviewed",
+   "note": "Gives Q3 figures ($2,033M→$1,773M) as nine-month figures.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "ltr-002:rag_hybrid": {
+   "truth_label": "correct",
+   "review_status": "reviewed",
+   "note": "Below 2024 but above the $37.5B five-year average: correct.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-001:rag_oracle": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "17.2% vs exact 17.31%: within 0.3 pt but mis-rounded; ambiguous.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-001:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "17.2% vs exact 17.31%: within 0.3 pt but mis-rounded; ambiguous.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-004:rag_oracle": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "2.2% vs exact 2.13%: mis-rounded; ambiguous.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-036:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "35.8% vs exact 35.86%: mis-rounded; ambiguous.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-039:rag_oracle": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "62.5% vs exact 62.76%: within 0.3 pt but mis-rounded; ambiguous.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "q3-039:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "62.5% vs exact 62.76%: within 0.3 pt but mis-rounded; ambiguous.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "ltr-003:rag_oracle": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "6.3% vs exact 6.12%: within 0.3 pt but mis-rounded; ambiguous.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "ltr-003:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "6.2% vs exact 6.12%: mis-rounded; ambiguous.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "ltr-036:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "Adds that the average was 'the same amount', which the letter does not state; ambiguous.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  },
+  "ltr-006:rag_hybrid": {
+   "truth_label": "incorrect",
+   "review_status": "excluded",
+   "note": "'Exactly doubling' is defensible at the rounded figures; question is ambiguous by design.",
+   "reviewer": "claude-opus-5-5 annotator audit, 2026-11-05"
+  }
+ }
+}

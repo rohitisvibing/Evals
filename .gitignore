@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+!.env.example
+
+# python / local data (pre-existing)
+.venv/
+__pycache__/
+*.pyc
+data/raw/
+data/uploads/
+*.sqlite
+*.db
+.pytest_cache/
+exports/
+
+# supabase local
+supabase/.branches
+supabase/.temp
