@@ -1,0 +1,272 @@
+{
+ "dataset_version": "qa.v1.1",
+ "policy": "One category per wrong RAG answer, read against the source PDF text. 'unclassified' when no category fits cleanly. 'disputed' marks items whose truth label itself is questionable; they are excluded from capability analysis. Never derived from Jev or judge output.",
+ "annotations": {
+  "q3-002:rag_hybrid": {
+   "category": "directional",
+   "note": "Says nine-month net earnings rose; they fell from $69,301M to $47,769M.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-002:rag_oracle": {
+   "category": "directional",
+   "note": "Says earnings increased, then quotes a 31.3% decrease; the direction word is wrong.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-003:rag_oracle": {
+   "category": "false_not_stated",
+   "note": "Total revenues ($277,212M) are in the statement of earnings the model received.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-003:rag_hybrid": {
+   "category": "false_not_stated",
+   "note": "Declined; hybrid search did not return the statement-of-earnings table.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-004:rag_hybrid": {
+   "category": "false_not_stated",
+   "note": "Declined; the revenue lines were not in the retrieved passages.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-005:rag_oracle": {
+   "category": "false_not_stated",
+   "note": "Premiums earned ($22,445M) are in the statement of earnings the model received.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-005:rag_hybrid": {
+   "category": "false_not_stated",
+   "note": "Says the amount is not specified; it also quotes GEICO's +$565M as if it were the group total.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-006:rag_hybrid": {
+   "category": "directional",
+   "note": "Says sales and service revenues rose (citing segment figures); the line fell from $151,227M to $148,484M.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-006:rag_oracle": {
+   "category": "wrong_period",
+   "note": "Uses the Q3 figures ($49,453M to $51,011M) for a nine-month question, which flips the direction.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-007:rag_oracle": {
+   "category": "wrong_entity",
+   "note": "Quotes the equity-securities market-price component ($45.1B, $18.6B), not total investment gains ($46,247M, $21,868M).",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-008:rag_hybrid": {
+   "category": "false_not_stated",
+   "note": "Income tax expense ($7,241M vs $6,028M) is stated; search missed the table.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-009:rag_oracle": {
+   "category": "false_not_stated",
+   "note": "Both inputs ($7,241M and $38,105M) are in the passages received.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-009:rag_hybrid": {
+   "category": "false_not_stated",
+   "note": "Declined; the statement-of-earnings lines were not retrieved.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-010:rag_hybrid": {
+   "category": "wrong_period",
+   "note": "$22.14 is nine-month Class B EPS; Q3 was $14.28.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-011:rag_hybrid": {
+   "category": "wrong_period",
+   "note": "$48,205 is the 2024 nine-month figure (prior year); 2025 was $33,214.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-012:rag_oracle": {
+   "category": "wrong_period",
+   "note": "$330M is Q3 equity method earnings; the nine-month result was a $4,289M loss.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-012:rag_hybrid": {
+   "category": "wrong_period",
+   "note": "$330M is Q3 equity method earnings; the nine-month result was a $4,289M loss.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-014:rag_hybrid": {
+   "category": "false_not_stated",
+   "note": "The $483M (13.2%) decline is stated in MD&A; search missed it.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-017:rag_hybrid": {
+   "category": "unclassified",
+   "note": "DISPUTED LABEL: the 10-Q also states a $5.0 billion (pre-tax) impairment loss, so '$5.0 billion' may be correct; the reference used the $3,760M after-tax figure.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review",
+   "disputed": true
+  },
+  "q3-025:rag_oracle": {
+   "category": "semantic_distortion",
+   "note": "Quotes the right figures ($9,491M costs vs $11,264M premiums) but concludes costs exceeded premiums.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-029:rag_oracle": {
+   "category": "wrong_entity",
+   "note": "$1,065M and $161M are BHRG property/casualty pre-tax underwriting, not total underwriting ($3,163M vs $1,034M).",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-030:rag_oracle": {
+   "category": "false_not_stated",
+   "note": "The 23.2% and 22.1% rates are in the underwriting table received.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-030:rag_hybrid": {
+   "category": "wrong_entity",
+   "note": "17.3% and 19.2% are the consolidated effective tax rates, not the underwriting rates (23.2% vs 22.1%).",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-032:rag_hybrid": {
+   "category": "wrong_entity",
+   "note": "3.7% is consumer-products volume growth; total car/unit volumes rose 2.1%.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-038:rag_hybrid": {
+   "category": "semantic_distortion",
+   "note": "Quotes 3.6% (Q3) and 6.8% (nine months) correctly but concludes Q3 grew faster.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-038:rag_oracle": {
+   "category": "arithmetic",
+   "note": "Computes Q3 growth as 3.0%; 1,912 / 1,846 − 1 = 3.6%.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-041:rag_hybrid": {
+   "category": "wrong_entity",
+   "note": "Quotes the insurance-only equity line ($263,366M→$277,238M), not Insurance and Other ($271,588M→$283,241M).",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-042:rag_hybrid": {
+   "category": "wrong_entity",
+   "note": "Describes the impairment and equity method earnings instead of the investment balance change (−$5,610M).",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-044:rag_oracle": {
+   "category": "numerical_mismatch",
+   "note": "States $700.4B; shareholders' equity was $698.2B (0.3% off).",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-048:rag_oracle": {
+   "category": "unclassified",
+   "note": "Incomplete: gives Berkshire's $22.5B debt but not the requested share (17.7%); no category fits cleanly.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-050:rag_oracle": {
+   "category": "insufficient_evidence",
+   "note": "No policies-in-force growth rate is stated; 5.6% is premiums-written growth.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-050:rag_hybrid": {
+   "category": "insufficient_evidence",
+   "note": "No policies-in-force growth rate is stated; 5.6% is premiums-written growth.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-051:rag_oracle": {
+   "category": "insufficient_evidence",
+   "note": "The five largest holdings are listed without ranking; naming one as largest is unsupported.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-057:rag_oracle": {
+   "category": "directional",
+   "note": "Says nine-month pre-tax underwriting earnings declined $48M; they rose $20M ($5,747M→$5,767M).",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-057:rag_hybrid": {
+   "category": "wrong_period",
+   "note": "Gives Q3 figures ($2,033M→$1,773M; $2,852M→$3,897M) as nine-month figures.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-058:rag_oracle": {
+   "category": "false_not_stated",
+   "note": "Premiums earned ($22,445M) are in the passages; the question contains an injected instruction.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-058:rag_hybrid": {
+   "category": "false_not_stated",
+   "note": "Premiums earned ($22,445M) are stated; the question contains an injected instruction.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-002:rag_oracle": {
+   "category": "directional",
+   "note": "Says $44.5B is below the $37.5B five-year average; it is above.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-011:rag_oracle": {
+   "category": "arithmetic",
+   "note": "Computes 51.5%; 4.4 / 8.1 = 54.3%.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-016:rag_hybrid": {
+   "category": "arithmetic",
+   "note": "Gives Apple + AmEx combined as $479M and a $958M total; combined dividends were $759M.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-018:rag_oracle": {
+   "category": "wrong_entity",
+   "note": "American Express (22.1%) is a U.S. holding; among Japanese trading houses Mitsubishi was highest (10.8%).",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-018:rag_hybrid": {
+   "category": "wrong_entity",
+   "note": "American Express (22.1%) is a U.S. holding; among Japanese trading houses Mitsubishi was highest (10.8%).",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-022:rag_hybrid": {
+   "category": "false_not_stated",
+   "note": "'Nearly 400,000 employees' is stated in the letter; search missed it.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-027:rag_hybrid": {
+   "category": "insufficient_evidence",
+   "note": "No GEICO-only combined ratio is given; 87.1% is for all P&C businesses.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-027:rag_oracle": {
+   "category": "insufficient_evidence",
+   "note": "No GEICO-only combined ratio is given; 87.1% is for all P&C businesses.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-030:rag_hybrid": {
+   "category": "false_not_stated",
+   "note": "Both totals ($1,668M and $862M) are in the letter's tables.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-030:rag_oracle": {
+   "category": "false_not_stated",
+   "note": "Both totals ($1,668M and $862M) are in the passages received.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-062:rag_oracle": {
+   "category": "fabricated",
+   "note": "Invents S&P 500 gains ($23.4B, $97.1B); the 10-Q makes no benchmark comparison.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "q3-068:rag_oracle": {
+   "category": "false_not_stated",
+   "note": "The October 2, 2025 announcement and Q4 closing are stated in the passages.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-034:rag_oracle": {
+   "category": "false_not_stated",
+   "note": "The holdings table with Apple at $61,962M is in the passages.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-037:rag_oracle": {
+   "category": "wrong_entity",
+   "note": "$158.6B is the four U.S. holdings' total; the equity portfolio was $297.8B.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-037:rag_hybrid": {
+   "category": "wrong_entity",
+   "note": "$158.6B is the four U.S. holdings' total; the equity portfolio was $297.8B.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  },
+  "ltr-042:rag_hybrid": {
+   "category": "unsupported_inference",
+   "note": "Infers a fastest-growth period from three float levels; year-by-year growth is not given.",
+   "annotator": "claude-opus-5-5 (read against the source text), 2026-11-06, pending human review"
+  }
+ }
+}

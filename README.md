@@ -132,6 +132,25 @@ Admin status is derived **only on the server**: the verified email from Supabase
 4. **Failure taxonomy v1** (`lib/eval/taxonomy.ts`): heuristic auto-suggestions are stored with `source='auto'`, and admin confirmations append `source='human'` rows.
 5. **Reproducibility:** each run records dataset, ground-truth label version, retrieval strategy and k, embedding model, Jev and judge model ids, `decision.v1`, `judge-rubric.v1`, `jev-questions.v1` and `chunk.v1`. Reports are immutable (a DB trigger blocks updates) and pin a snapshot of label versions. Label reviews append new versions, never edits.
 
+## Evaluator Intelligence (`/evaluators`)
+
+This page shows which errors Jev and the LLM judge each catch, where they disagree, and whether combining them pays off. Everything on it is computed in `lib/eval/evaluator-intel.ts` from grades already stored in the immutable reports. The only new model calls were the 45-case adversarial set (`data/golden/qa-adv-v1`, 90 calls, about $0.03).
+
+- **Capability matrix:** detection rate per error category, plus unique catches, answers missed by both, and false alarms on correct answers that probe the same category. Categories with fewer than 10 wrong answers are flagged as too small to conclude.
+- **Disagreement explorer:** a clickable 2×2 (wrong answers, or false alarms on correct ones), a paired McNemar test with a bootstrap interval, and each example with its evidence and both verdicts.
+- **Hybrid policies:**
+
+  | Policy | Rule |
+  |---|---|
+  | A | Jev only |
+  | B | Judge only |
+  | C | Reject if either says incorrect (OR) |
+  | D | Jev first, escalate disagreements |
+
+  All four are simulated from stored grades. Costs are measured; C and D latencies are estimated from measured per-answer values.
+- **Findings:** templated, and shown only when their guards pass (n ≥ 10 and p < 0.05 for a category claim; at least 5 unique catches on each side for "complementary"). The page recommends the cheapest configuration that is not significantly worse than the best one.
+- **Commands:** `pnpm qa:categories` checks the category labels; `pnpm qa:adv:build` rebuilds the adversarial set; `pnpm qa:bench --version qa.adv-v1` regrades it.
+
 ## Costs
 
 | Item | Cost |

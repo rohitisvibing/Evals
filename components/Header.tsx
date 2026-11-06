@@ -21,10 +21,11 @@ export function Header({ user, used }: { user: SessionUser | null; used: number 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 h-14 flex items-center gap-4">
         <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
           <Mark />
-          <span>Observatory</span>
+          <span className="hidden min-[400px]:inline">Observatory</span>
         </Link>
-        <nav className="ml-auto flex items-center gap-1 sm:gap-3 text-[13px]">
-          <Link href="/benchmark" className="px-2 py-1 rounded-md text-ink2 hover:text-ink">Benchmark</Link>
+        <nav className="ml-auto flex items-center gap-0.5 sm:gap-3 text-[13px] whitespace-nowrap">
+          <Link href="/benchmark" className="px-1.5 sm:px-2 py-1 rounded-md text-ink2 hover:text-ink">Benchmark</Link>
+          <Link href="/evaluators" className="px-1.5 sm:px-2 py-1 rounded-md text-ink2 hover:text-ink">Evaluators</Link>
           {user?.isAdmin && <Link href="/admin" className="px-2 py-1 rounded-md text-ink2 hover:text-ink">Admin</Link>}
           {user ? (
             <>
@@ -42,7 +43,7 @@ export function Header({ user, used }: { user: SessionUser | null; used: number 
             </>
           ) : (
             <>
-              <DevLoginButton small />
+              <span className="hidden md:block"><DevLoginButton small /></span>
               <SignInButton next="/" label="Sign in" small />
             </>
           )}

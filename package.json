@@ -19,7 +19,9 @@
     "embed:missing": "tsx scripts/embed-missing.ts",
     "qa:check": "tsx scripts/check-qa-golden.ts",
     "qa:build": "tsx scripts/build-qa-golden.ts",
-    "qa:bench": "tsx scripts/run-qa-benchmark.ts"
+    "qa:bench": "tsx scripts/run-qa-benchmark.ts",
+    "qa:categories": "tsx scripts/check-error-categories.ts",
+    "qa:adv:build": "tsx scripts/build-qa-adversarial.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

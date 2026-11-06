@@ -37,6 +37,16 @@ export const METRICS = {
   kappa_vs_truth: "Cohen's kappa between the evaluator's grades and the true correctness, corrected for chance. 1 is perfect.",
   approved_wrong: "Wrong answers the evaluator graded correct: the most damaging miss, because a wrong answer gets through.",
   labelled_questions: "Benchmark questions with a reference answer and labelled evidence.",
+  detection_rate: "Of the wrong answers in this category, the share the evaluator graded incorrect.",
+  unique_catches: "Wrong answers this evaluator flagged and the other approved or could not tell. These show where their strengths differ.",
+  missed_by_both: "Wrong answers neither evaluator flagged: a shared blind spot that combining them cannot fix.",
+  or_policy: "Reject an answer if either evaluator says incorrect (or can't tell). Both always run.",
+  escalation: "Jev runs first. Jev says incorrect: reject. Jev and the judge both say correct: accept. Anything else goes to human review.",
+  escalation_rate: "Share of answers sent to review instead of being decided automatically.",
+  estimated_latency: "Composed from each answer's measured latencies: the slower of the two when both run in parallel, the sum when the judge runs after Jev.",
+  cost_per_1000: "Average measured provider cost per graded answer, times 1,000.",
+  paired_difference: "Jev's catch rate minus the judge's, on the same answers, with a 95% bootstrap interval. An interval that includes 0 means no clear difference.",
+  probe_fpr: "Correct answers to questions that test this category, wrongly graded incorrect.",
   labelled_claims: "Claims in the golden dataset with a hand-checked verdict and evidence location.",
 } as const;
 export type MetricKey = keyof typeof METRICS;
